@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc Grade Calc</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        input {
+            width: 50px;
+            margin: 5px;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calc Grade Calculator</h2>
+    
+    <label for="grade1">Learning module average:</label>
+    <input type="number" id="grade1">
+
+    <label for="grade2">hw average:</label>
+    <input type="number" id="grade2">
+
+    <label for="grade3">test 1:</label>
+    <input type="number" id="grade3">
+
+    <label for="grade4">test 2:</label>
+    <input type="number" id="grade4">
+
+    <label for="grade5">test 3:</label>
+    <input type="number" id="grade5">
+
+    <label for="grade6">final :</label>
+    <input type="number" id="grade6">
+
+    <button onclick="calculateFinalGrade()">Calculate Final Grade 😱</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateFinalGrade() {
+            var grade1 = parseFloat(document.getElementById("grade1").value) || 0;
+            var grade2 = parseFloat(document.getElementById("grade2").value) || 0;
+            var grade3 = parseFloat(document.getElementById("grade3").value) || 0;
+            var grade4 = parseFloat(document.getElementById("grade4").value) || 0;
+            var grade5 = parseFloat(document.getElementById("grade5").value) || 0;
+            var grade6 = parseFloat(document.getElementById("grade6").value) || 0;
+
+            var finalGrade = (grade1 + grade2 + grade3 + grade4 + grade5 + grade6) / 6;
+
+            document.getElementById("result").innerHTML = "Final Grade: " + finalGrade.toFixed(2) + "%";
+        }
+    </script>
+</body>
+</html>
